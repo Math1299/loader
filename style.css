@@ -306,7 +306,209 @@ h1 {
         transform: rotate(360deg);
     }
 }
+
 /* ANIMATION 9 */
+
+.anim9 {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pointc1 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #000;
+    margin: 0 5px;
+    animation: saut 0.5s alternate infinite;
+}
+.pointc1:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.pointc1:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.pointc1:nth-child(3) {
+    animation-delay: 0.3s;
+}
+@keyframes saut {
+    100% {
+        transform: translateY(-30px);
+    }
+}
+
 /* ANIMATION 10 */
+
+.anim10 {
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+.anim10 div {
+    transform-origin: 40px 40px; /*afin de réaliser le rond vide au centre*/
+    animation: anim10 1.2s linear infinite;
+}
+.anim10 div::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 3px;
+    left: 37px;
+    width: 6px;
+    height: 18px;
+    border-radius: 20%;
+    background: #333;
+}
+.anim10 div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -1.1s;
+}
+.anim10 div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -1s;
+}
+.anim10 div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -0.9s;
+}
+.anim10 div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -0.8s;
+}
+.anim10 div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -0.7s;
+}
+.anim10 div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -0.6s;
+}
+.anim10 div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -0.5s;
+}
+.anim10 div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -0.4s;
+}
+.anim10 div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.3s;
+}
+.anim10 div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.2s;
+}
+.anim10 div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.1s;
+}
+.anim10 div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+}
+@keyframes anim10 {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 /* ANIMATION 11*/
+
+.anim:nth-child(12) {
+    background: #fff;
+}
+
+.anim11 {
+    width: 142px;
+    height: 40px;
+    background: #fff;
+    filter: contrast(20);
+    position: relative;
+}
+.anim11 .dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 12px;
+    left: 15px;
+    filter: blur(4px);
+    background: #000;
+    border-radius: 50%;
+    animation: point 2.8s infinite;
+}
+.anim11 .dots span {
+    display: block;
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-left: 16px;
+    filter: blur(4px);
+    background: #000;
+    border-radius: 50%;
+}
+.anim11 .dots {
+    margin-top: 12px;
+    margin-left: 31px;
+    animation: points 2.8s infinite;
+}
+
+@keyframes point {
+    50% {
+        transform: translateX(96px);
+    }
+}
+@keyframes points {
+    50% {
+        transform: translateX(-31px);
+    }
+}
 /* ANIMATION 12*/
+
+.panneau {
+    width: 40px;
+    height: 40px;
+    background: #333;
+    animation: movepan 1.3s infinite ease-in-out;
+}
+@keyframes movepan {
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+    }
+}
+
+.loaderFinal {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loaderFinal.hidden {
+    animation: fadeOut 3s forwards;
+}
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
